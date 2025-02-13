@@ -1,3 +1,4 @@
+![demo picture](https://linux.do/uploads/default/original/4X/9/8/d/98d001e00050c9be3deb941e69e2661adcf6b0db.png)
 ## 重在简单
 
 ```bash
