@@ -71,7 +71,7 @@ Listening on http://localhost:8787
 2.每个网站右侧dot（绿色/红色）是请求响应度，不是什么50天内的状态。
 
 #### 重在简单，另外加了 #纯水 有AI帮助的，我很拉，勿喷，说了就是我拉 :no_mouth:
-### [demo](https://monitor.2649819738.workers.dev/)
+### [demo](https://status.zhangyux.ddns-ip.net/)
 
 #### 另
 ```
