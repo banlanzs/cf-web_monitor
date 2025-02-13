@@ -22,7 +22,7 @@ async function handleRequest(request) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>${MONITOR_NAME}</title>
     <link rel="stylesheet" href="/style.css">
 </head>
@@ -192,10 +192,11 @@ setInterval(updateCountdown, 1000); // 每秒更新倒计时
 .monitor-name {
     font-size: 24px;
     font-weight: bold;
-    margin-right:10px;
+    margin-right: 10px;
 }
-.countdown{
-    margin-right:auto;
+
+.countdown {
+    margin-right: auto;
 }
 
 .buttons {
@@ -293,30 +294,73 @@ setInterval(updateCountdown, 1000); // 每秒更新倒计时
     text-decoration: underline;
 }
 
-/* 总体响应百分比样式 */
 .percentage-display {
     position: absolute;
     top: 2px;
-    right: 5px; /* 增大右边距 */
+    right: 5px;
     font-size: 12px;
     color: #555;
 }
-/* 加载进度条样式 */
+
 .progress-bar-container {
     width: 100%;
     height: 20px;
     background-color: #f0f0f0;
     border-radius: 5px;
-    overflow: hidden; /* 确保进度条在容器内 */
-    margin:20px 0;
+    overflow: hidden;
+    margin: 20px 0;
 }
 
 .progress-bar {
     height: 100%;
     width: 0;
-    background-color: #4caf50; /* 进度条颜色 */
-    transition: width 0.2s ease; /* 平滑过渡效果 */
+    background-color: #4caf50;
+    transition: width 0.2s ease;
 }
+
+/* 媒体查询：针对小屏幕 (例如，小于 600px) */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px; /* 减小内边距 */
+    }
+
+    .header {
+        flex-direction: column; /* 垂直排列头部元素 */
+        align-items: stretch; /* 拉伸子元素以填充容器 */
+    }
+    .monitor-name{
+        margin-right:0;
+        margin-bottom:10px;
+    }
+
+    .buttons {
+        margin-top: 10px; /* 增加按钮的顶部外边距 */
+        justify-content: center; /* 水平居中按钮 */
+    }
+    .countdown{
+        order:-1;
+    }
+
+    .status-item {
+        flex-direction: column; /* 垂直排列状态项元素 */
+        align-items: flex-start; /* 左对齐 */
+    }
+
+    .status-bars {
+        margin-left: 0; /* 移除左外边距 */
+        margin-top: 10px; /* 增加顶部外边距 */
+        width: 100%; /* 撑满 */
+    }
+     .status-bar {
+         flex: 1; /* 填满 */
+     }
+    .percentage-display {
+        position: static; /* 移除绝对定位 */
+        margin-top: 5px; /* 增加顶部外边距 */
+        text-align:right;
+    }
+}
+
 `;
         return new Response(styleContent, {
             headers: { 'Content-Type': 'text/css' },
