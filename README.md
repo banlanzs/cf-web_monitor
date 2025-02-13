@@ -1,4 +1,3 @@
-![Snipaste_2025-02-13_15-01-22|690x405](upload://lNQecPH1GpLDiapvc9WQOTxmbzR.png)
 ## 重在简单
 
 ```bash
