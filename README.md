@@ -81,3 +81,7 @@ Listening on http://localhost:8787
 ```
 善用AI，AI增添生活色彩！
 ```
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=banlanzs/cf-web_monitor&type=Date)](https://star-history.com/#banlanzs/cf-web_monitor&Date)
