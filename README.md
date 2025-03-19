@@ -1,9 +1,4 @@
-PC：
-![demo picture](https://linux.do/uploads/default/original/4X/9/8/d/98d001e00050c9be3deb941e69e2661adcf6b0db.png)
-
-移动端：
-![pic](https://linux.do/uploads/default/optimized/4X/4/c/e/4ce25e27fe9c70ec84a71d78e8f0a3136fc5e5ca_2_363x750.jpeg)
-## 重在简单
+![Snipaste_2025-03-20_00-19-27.png](https://img.picui.cn/free/2025/03/20/67daef46f2b87.png)
 
 ```bash
 const GITHUB_URL = 'https://github.com/';//
