@@ -66,9 +66,9 @@ Listening on http://localhost:8787
 
 ------------------------------------------------------------------------------------
 
-### [demo](https://status.zhangyux.ddns-ip.net/)
+### [demo](https://status.banlanzs.x10.mx/)
 
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=banlanzs/cf-web_monitor&type=Date)](https://star-history.com/#banlanzs/cf-web_monitor&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=banlanzs/cf-web_monitor&type=Date)](https://www.star-history.com/#banlanzs/cf-web_monitor&Date)
