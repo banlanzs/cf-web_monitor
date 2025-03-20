@@ -1,4 +1,4 @@
-[![Snipaste_2025-03-20_00-19-27.png](https://img.picui.cn/free/2025/03/20/67daef46f2b87.png)](https://img.picui.cn/free/2025/03/20/67daef46f2b87.png)
+[![Snipaste_2025-03-20_10-47-22.png](https://img.picui.cn/free/2025/03/20/67db81dad11dd.png)](https://img.picui.cn/free/2025/03/20/67db81dad11dd.png)
 
 ```bash
 const GITHUB_URL = 'https://github.com/';//
