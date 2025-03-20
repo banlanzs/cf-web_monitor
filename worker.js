@@ -22,6 +22,7 @@ async function handleRequest(request) {
     <title>${MONITOR_NAME}</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="http://cdnjson.com/images/2025/03/18/banlan1.jpg" type="image/x-icon">
 </head>
 <body>
     <div class="container">
@@ -125,6 +126,7 @@ function updateSummary(data) {
     upSitesDisplay.textContent = upSites;
     downSitesDisplay.textContent = downSites;
 }
+
 function renderStatus(data) {
     statusList.innerHTML = "";
     
@@ -139,6 +141,7 @@ function renderStatus(data) {
         const statusIndicator = document.createElement("div");
         statusIndicator.classList.add("status-indicator");
         statusIndicator.classList.add(site.isUp ? "up" : "down");
+        statusIndicator.setAttribute("data-tooltip", site.isUp ? "正常" : "异常"); // 添加提示信息
         
         const websiteName = document.createElement("div");
         websiteName.classList.add("website-name");
@@ -148,6 +151,7 @@ function renderStatus(data) {
         statusText.classList.add("status-text");
         statusText.classList.add(site.isUp ? "up" : "down");
         statusText.textContent = site.isUp ? "正常" : "异常";
+        statusText.setAttribute("data-tooltip", site.isUp ? "正常" : "异常"); // 添加提示信息
         
         statusHeader.appendChild(statusIndicator);
         statusHeader.appendChild(websiteName);
@@ -265,11 +269,18 @@ setInterval(updateCurrentTime, 1000); // 每秒更新当前时间
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--background-color);
+    background: linear-gradient(135deg, #f0f4c3, #e1f5fe);
+    animation: backgroundAnimation 10s ease infinite;
     color: var(--text-color);
     line-height: 1.6;
     margin: 0;
     padding: 0;
+}
+
+@keyframes backgroundAnimation {
+    0% { background: #f0f4c3; }
+    50% { background: #e1f5fe; }
+    100% { background: #f0f4c3; }
 }
 
 .container {
@@ -549,6 +560,30 @@ body {
     visibility: visible;
     opacity: 1;
 }
+/* 提示信息样式 */
+.status-bar::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 40px; /* 调整位置，确保在状态条上方显示 */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    pointer-events: none; /* 防止提示框干扰鼠标事件 */
+    z-index: 100;
+}
+
+.status-bar:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
 
 .progress-bar-container {
     width: 100%;
@@ -636,6 +671,30 @@ footer {
     .status-text {
         margin-left: auto;
     }
+}
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%; /* 在元素上方显示 */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 1; /* 确保提示信息可见 */
+    transition: opacity 0.3s;
+}
+
+[data-tooltip]:hover::before {
+    visibility: visible;
+    opacity: 1;
 }
 `;
 return new Response(styleContent, {
